@@ -1,8 +1,10 @@
+import WelcomePage from "./components/WelcomePage"
+
 function App() {
 
   return (
     <>
-     <h1>TODO: WORK HERE</h1>
+      <WelcomePage />
     </>
   )
 }
