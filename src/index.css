@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Yusei Magic', sans-serif;
   color: #fff;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .mainContainer {
@@ -12,20 +21,58 @@
   background-size: fill;
   height: 100vh;
 }
+
+/*Welcome Page*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .title {
   display: flex;
   justify-content: center;
-
+  margin-bottom: 24px;
+  font-size: 36px;
 }
 
 .setup {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  gap: 24px;
+  font-size: 24px;
 }
 
 .actions {
+  width: 40%;
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  font-size: 24px;
+}
+
+.actions .players {
+  text-align: center;
+  align-self: center;
+  font-size: 40px;
+}
+
+.player-name {
+  color: black;
+  text-align: center;
+  border-radius: 16px;
+  border: none;
+  padding: 8px;
+  font-size: 20px;
+}
+
+.btn {
+  font-size: 56px;
+}
+
+.start {
+  font-size: 56px;
 }
