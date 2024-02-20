@@ -11,11 +11,11 @@ function WelcomePage({
   return (
     <div className="container">
       <div className="title">
-        <h1>Welcome</h1>
+        <h1 className="welcome">Welcome</h1>
       </div>
 
       <section className="setup">
-        <h2>How many players?</h2>
+        <h2 className="numOfPlayersText">Players</h2>
         <div className="actions">
           <button onClick={onSubstractPlayer} className="btn">
             -
