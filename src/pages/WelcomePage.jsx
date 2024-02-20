@@ -31,6 +31,7 @@ function WelcomePage({
             key={index}
             className="player-name"
             onChange={(event) => onChangePlayerName(event, index)}
+            placeholder={`Player ${index + 1}`}
           />
         ))}
         {readyToStart && (
