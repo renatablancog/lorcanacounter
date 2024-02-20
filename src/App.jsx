@@ -69,6 +69,22 @@ function App() {
     setGameStart(true);
   };
 
+  const incrementPlayerLore = (playerIndex) => {
+    const updatedPlayers = [...players];
+    if (updatedPlayers[playerIndex].count < 20) {
+      updatedPlayers[playerIndex].count++;
+    }
+    setPlayers(updatedPlayers);
+  };
+
+  const decrementPlayerLore = (playerIndex) => {
+    const updatedPlayers = [...players];
+    if (updatedPlayers[playerIndex].count > 0) {
+      updatedPlayers[playerIndex].count--;
+    }
+    setPlayers(updatedPlayers);
+  };
+
   return (
     <div className="mainContainer">
       {!gameStart ? (
@@ -81,7 +97,11 @@ function App() {
           onChangeStartGame={handleChangeStartGame}
         />
       ) : (
-        <CounterPage />
+        <CounterPage
+          players={players}
+          onIncrementPlayerLore={incrementPlayerLore}
+          onDecrementPlayerLore={decrementPlayerLore}
+        />
       )}
     </div>
   );

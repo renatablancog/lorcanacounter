@@ -54,7 +54,9 @@ button {
   font-size: 24px;
 }
 
-.actions .players {
+.actions .players,
+.lore,
+.name {
   text-align: center;
   align-self: center;
   font-size: 40px;
