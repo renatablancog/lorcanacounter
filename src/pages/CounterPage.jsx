@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 function CounterPage(props) {
   const layoutOnePlayer = (
-    <div>
+    <div className="setup">
       <h1 className="name">{props.players[0].name}</h1>
       <div className="actions">
         <button className="btn" onClick={() => props.onDecrementPlayerLore(0)}>
@@ -16,14 +16,119 @@ function CounterPage(props) {
     </div>
   );
 
-  const layoutTwoPlayers = <div>Design for 2 players</div>;
+  const layoutTwoPlayers = (
+    <div className="two-players">
+      {props.players.map((player, index) => {
+        return (
+          <div
+            className="setup"
+            key={index}
+            style={{
+              transform: `rotate(-${(360 * index) / (index + 1)}deg)`,
+            }}
+          >
+            <h1 className="name">{player.name}</h1>
+            <div className="actions">
+              <button
+                className="btn"
+                onClick={() => props.onDecrementPlayerLore(index)}
+              >
+                -
+              </button>
+              <div className="lore">{player.count}</div>
+              <button
+                className="btn"
+                onClick={() => props.onIncrementPlayerLore(index)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 
-  const layoutThreePlayers = <div>Design for 3 players</div>;
+  const layoutThreePlayers = (
+    <div className="three-players">
+      {props.players.map((player, index) => {
+        return (
+          <div
+            className="setup"
+            key={index}
+            style={{
+              gridColumnStart: `${index <= 1 ? index + 1 : 1}`,
+              gridColumnEnd: `${index <= 1 ? index + 2 : 3}`,
+              gridRowStart: `${index}`,
+              transform: `rotate(${
+                index === 0 ? '90' : index === 1 ? '-90' : ''
+              }deg)`,
+            }}
+          >
+            <h1 className="name">{player.name}</h1>
+            <div className="actions">
+              <button
+                className="btn"
+                onClick={() => props.onDecrementPlayerLore(index)}
+              >
+                -
+              </button>
+              <div className="lore">{player.count}</div>
+              <button
+                className="btn"
+                onClick={() => props.onIncrementPlayerLore(index)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 
-  const layoutFourPlayers = <div>Design for 4 players</div>;
+  const layoutFourPlayers = (
+    <div className="four-players">
+      {props.players.map((player, index) => {
+        return (
+          <div
+            className="setup"
+            key={index}
+            style={{
+              gridColumnStart: `${index === 0 || index === 2 ? 1 : 2}`,
+              transform: `rotate(${
+                index === 0 || index === 2
+                  ? '90'
+                  : index === 1 || index === 3
+                  ? '-90'
+                  : ''
+              }deg)`,
+            }}
+          >
+            <h1 className="name">{player.name}</h1>
+            <div className="actions">
+              <button
+                className="btn"
+                onClick={() => props.onDecrementPlayerLore(index)}
+              >
+                -
+              </button>
+              <div className="lore">{player.count}</div>
+              <button
+                className="btn"
+                onClick={() => props.onIncrementPlayerLore(index)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
-    <div className="container">
+    <>
       {props.players.length === 1
         ? layoutOnePlayer
         : props.players.length === 2
@@ -31,7 +136,7 @@ function CounterPage(props) {
         : props.players.length === 3
         ? layoutThreePlayers
         : layoutFourPlayers}
-    </div>
+    </>
   );
 }
 

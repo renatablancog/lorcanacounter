@@ -45,6 +45,7 @@ button {
   width: 50%;
   gap: 24px;
   font-size: 24px;
+  justify-content: center;
 }
 
 .actions {
@@ -77,4 +78,29 @@ button {
 
 .start {
   font-size: 56px;
+}
+
+.two-players {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  gap: 20%;
+}
+
+.three-players {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  height: 100vh;
+}
+
+.four-players {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  height: 100vh;
 }
