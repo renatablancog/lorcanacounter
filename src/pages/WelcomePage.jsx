@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import logo from '../assets/logo.png';
 // Deconstruction of props params. (props.onAddPlayer, props.onSubstractPlayer, props.player)
 function WelcomePage({
   onAddPlayer,
@@ -11,7 +12,7 @@ function WelcomePage({
   return (
     <div className="container">
       <div className="title">
-        <h1 className="welcome">Welcome</h1>
+        <img className="logo" src={logo} />
       </div>
 
       <section className="setup">
