@@ -10,7 +10,7 @@ function WelcomePage({
   onChangeStartGame,
 }) {
   return (
-    <div className="container">
+    <div className="container glass">
       <div className="title">
         <img className="logo" src={logo} />
       </div>
