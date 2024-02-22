@@ -20,15 +20,35 @@ button {
   background-position: center;
   background-size: fill;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* General Classes */
+
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /*Welcome Page*/
 .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 70%;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.logo {
+  height: 200px;
+  margin-top: 50px;
 }
 
 .title {
@@ -39,9 +59,11 @@ button {
 }
 
 .setup {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   width: 50%;
   gap: 24px;
   font-size: 24px;
@@ -49,7 +71,7 @@ button {
 }
 
 .actions {
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   font-size: 24px;
@@ -87,6 +109,7 @@ button {
   height: 100vh;
   justify-content: center;
   gap: 20%;
+  width: 100%;
 }
 
 .three-players {
@@ -95,6 +118,7 @@ button {
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .four-players {
@@ -103,4 +127,5 @@ button {
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
   height: 100vh;
+  width: 100%;
 }

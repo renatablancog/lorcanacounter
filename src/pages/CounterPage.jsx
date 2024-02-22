@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 function CounterPage(props) {
   const layoutOnePlayer = (
-    <div className="setup">
+    <div className="setup glass">
       <h1 className="name">{props.players[0].name}</h1>
       <div className="actions">
         <button className="btn" onClick={() => props.onDecrementPlayerLore(0)}>
@@ -21,7 +21,7 @@ function CounterPage(props) {
       {props.players.map((player, index) => {
         return (
           <div
-            className="setup"
+            className="setup glass"
             key={index}
             style={{
               transform: `rotate(-${(360 * index) / (index + 1)}deg)`,
@@ -54,7 +54,7 @@ function CounterPage(props) {
       {props.players.map((player, index) => {
         return (
           <div
-            className="setup"
+            className="setup glass"
             key={index}
             style={{
               gridColumnStart: `${index <= 1 ? index + 1 : 1}`,
@@ -92,7 +92,7 @@ function CounterPage(props) {
       {props.players.map((player, index) => {
         return (
           <div
-            className="setup"
+            className="setup glass"
             key={index}
             style={{
               gridColumnStart: `${index === 0 || index === 2 ? 1 : 2}`,
