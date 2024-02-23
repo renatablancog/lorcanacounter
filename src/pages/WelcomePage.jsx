@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import logo from '../assets/logo.png';
+
 // Deconstruction of props params. (props.onAddPlayer, props.onSubstractPlayer, props.player)
 function WelcomePage({
   onAddPlayer,
@@ -13,10 +14,11 @@ function WelcomePage({
     <div className="container glass">
       <div className="title">
         <img className="logo" src={logo} />
+        <h2>Counter</h2>
       </div>
 
       <section className="setup">
-        <h2 className="numOfPlayersText">Players</h2>
+        <h2 className="playersText">PLAYERS</h2>
         <div className="actions">
           <button onClick={onSubstractPlayer} className="btn">
             -
@@ -40,6 +42,9 @@ function WelcomePage({
             Start
           </button>
         )}
+        <footer className="footer">
+          By Ren & Julzz {new Date().getFullYear()}
+        </footer>
       </section>
     </div>
   );
