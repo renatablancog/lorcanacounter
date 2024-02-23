@@ -237,63 +237,33 @@ button {
 }
 
 .bubbleMaleficient {
-  position: relative;
-  width: 350px;
-  height: 170px;
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.8);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  border: #000000 solid 2px;
-  transform: translateY(-200px);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 130px;
 }
 
-.bubbleMaleficient:after {
-  content: '';
+.winnerName {
+  color: #c2d9b0;
+  font-size: 24px;
   position: absolute;
-  border-style: solid;
-  border-width: 20px 16px 0;
-  border-color: rgba(0, 0, 0, 0.8) transparent;
-  display: block;
-  width: 0;
-  z-index: 1;
-  bottom: -20px;
-  left: 300px;
+  transform: translateY(-120px);
+  text-transform: uppercase;
+  letter-spacing: 0.3cap;
 }
 
 .bubbleSimba {
-  position: relative;
-  width: 390px;
-  height: 170px;
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.8);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  border: #000000 solid 2px;
-  transform: translateY(-200px);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 180px;
 }
 
-.bubbleSimba:after {
-  content: '';
+.winnerNameSimba {
+  color: #730602;
+  font-size: 24px;
   position: absolute;
-  border-style: solid;
-  border-width: 20px 16px 0;
-  border-color: rgba(0, 0, 0, 0.8) transparent;
-  display: block;
-  width: 0;
-  z-index: 1;
-  bottom: -20px;
-  left: 36px;
+  transform: translateY(-70px);
+  text-transform: uppercase;
+  letter-spacing: 0.3cap;
 }

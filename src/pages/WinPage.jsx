@@ -46,8 +46,8 @@ function WinPage({ winner }) {
       style={{
         background: `url(${
           character > 0
-            ? 'src/assets/backgrounds/mesh-gradient.png'
-            : 'src/assets/backgrounds/mesh-gradient2.png'
+            ? 'lorcanacounter/src/assets/backgrounds/mesh-gradient.png'
+            : 'lorcanacounter/src/assets/backgrounds/mesh-gradient2.png'
         })`,
       }}
     >

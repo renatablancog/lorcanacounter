@@ -1,10 +1,12 @@
 import simba from '../../assets/characters/simba.png';
 import PropTypes from 'prop-types';
+import text from '../../assets/bubble2.png';
 
 function Simba({ winner }) {
   return (
     <>
-      <div className="bubbleSimba">Well Played {winner} !</div>
+      <img className="bubbleSimba" src={text} />
+      <p className="winnerNameSimba">Well played {winner} !</p>
       <img src={simba} alt="simba" style={{ left: 0 }} className="character" />
     </>
   );

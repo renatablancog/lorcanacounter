@@ -9,18 +9,20 @@ function App() {
   return (
     <div className="mainContainer">
       {!gameStart ? (
-        <WelcomePage />
+        <>
+          <WelcomePage />
+          <footer className="disclaimer">
+            <p>
+              All Disney&apos;s Lorcana, Disney logos, characters and trademarks
+              belong to Disney and do not have any intention of commercial use
+            </p>
+          </footer>
+        </>
       ) : !winner ? (
         <CounterPage />
       ) : (
         <WinPage winner={winner} />
       )}
-      <footer className="disclaimer">
-        <p>
-          All Disney&apos;s Lorcana, Disney logos, characters and trademarks
-          belong to Disney and do not have any intention of commercial use
-        </p>
-      </footer>
     </div>
   );
 }
