@@ -14,6 +14,7 @@ function App() {
    */
   const [readyToStart, setReadyToStart] = useState(false);
   const [players, setPlayers] = useState([{ name: '', count: 0 }]);
+  const [winner, setWinner] = useState('');
   const [gameStart, setGameStart] = useState(false);
 
   /* Function that adds 1 to the numer of players
@@ -70,12 +71,20 @@ function App() {
     setGameStart(true);
   };
 
+  const checkIfPlayerWinner = (playerIndex) => {
+    const updatedPlayers = [...players];
+    if (updatedPlayers[playerIndex].count === 20) {
+      setWinner(updatedPlayers[playerIndex].name);
+    }
+  };
+
   const incrementPlayerLore = (playerIndex) => {
     const updatedPlayers = [...players];
     if (updatedPlayers[playerIndex].count < 20) {
       updatedPlayers[playerIndex].count++;
     }
     setPlayers(updatedPlayers);
+    checkIfPlayerWinner(playerIndex);
   };
 
   const decrementPlayerLore = (playerIndex) => {
@@ -97,14 +106,15 @@ function App() {
           onChangePlayerName={handlePlayerNameChange}
           onChangeStartGame={handleChangeStartGame}
         />
-      ) : (
+      ) : !winner ? (
         <CounterPage
           players={players}
           onIncrementPlayerLore={incrementPlayerLore}
           onDecrementPlayerLore={decrementPlayerLore}
         />
+      ) : (
+        <WinPage winner={winner} />
       )}
-      {/* <WinPage winner="Renata" /> */}
       <footer className="disclaimer">
         <p>
           All Disney&apos;s Lorcana, Disney logos, characters and trademarks

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import logo from '../assets/logo.png';
+import PlusIcon from '../assets/icons/plus-sign.svg';
+import MinusIcon from '../assets/icons/minus-sign.svg';
 
 // Deconstruction of props params. (props.onAddPlayer, props.onSubstractPlayer, props.player)
 function WelcomePage({
@@ -16,17 +18,12 @@ function WelcomePage({
         <img className="logo" src={logo} />
         <h2>Counter</h2>
       </div>
-
       <section className="setup">
         <h2 className="playersText">PLAYERS</h2>
         <div className="actions">
-          <button onClick={onSubstractPlayer} className="btn">
-            -
-          </button>
+          <img src={MinusIcon} onClick={onSubstractPlayer} className="btn" />
           <div className="players">{players.length}</div>
-          <button onClick={onAddPlayer} className="btn">
-            +
-          </button>
+          <img src={PlusIcon} onClick={onAddPlayer} className="btn" />
         </div>
         {players.map((player, index) => (
           <input
@@ -37,11 +34,15 @@ function WelcomePage({
             placeholder={`Player ${index + 1}`}
           />
         ))}
-        {readyToStart && (
-          <button className="start" onClick={onChangeStartGame}>
-            Start
-          </button>
-        )}
+
+        <button
+          className="start"
+          onClick={onChangeStartGame}
+          disabled={!readyToStart}
+        >
+          Start
+        </button>
+
         <footer className="footer">
           By Ren & Julzz {new Date().getFullYear()}
         </footer>

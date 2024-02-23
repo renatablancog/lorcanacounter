@@ -1,17 +1,23 @@
 import PropTypes from 'prop-types';
+import PlusIcon from '../assets/icons/plus-sign.svg';
+import MinusIcon from '../assets/icons/minus-sign.svg';
 
 function CounterPage(props) {
   const layoutOnePlayer = (
-    <div className="setup glass">
+    <div className="player glass">
       <h1 className="name">{props.players[0].name}</h1>
       <div className="actions">
-        <button className="btn" onClick={() => props.onDecrementPlayerLore(0)}>
-          -
-        </button>
+        <img
+          src={MinusIcon}
+          onClick={() => props.onDecrementPlayerLore(0)}
+          className="btn"
+        />
         <div className="lore">{props.players[0].count}</div>
-        <button className="btn" onClick={() => props.onIncrementPlayerLore(0)}>
-          +
-        </button>
+        <img
+          src={PlusIcon}
+          onClick={() => props.onIncrementPlayerLore(0)}
+          className="btn"
+        />
       </div>
     </div>
   );
@@ -21,7 +27,7 @@ function CounterPage(props) {
       {props.players.map((player, index) => {
         return (
           <div
-            className="setup glass"
+            className="player glass"
             key={index}
             style={{
               transform: `rotate(-${(360 * index) / (index + 1)}deg)`,
@@ -29,19 +35,17 @@ function CounterPage(props) {
           >
             <h1 className="name">{player.name}</h1>
             <div className="actions">
-              <button
-                className="btn"
+              <img
+                src={MinusIcon}
                 onClick={() => props.onDecrementPlayerLore(index)}
-              >
-                -
-              </button>
-              <div className="lore">{player.count}</div>
-              <button
                 className="btn"
+              />
+              <div className="lore">{player.count}</div>
+              <img
+                src={PlusIcon}
                 onClick={() => props.onIncrementPlayerLore(index)}
-              >
-                +
-              </button>
+                className="btn"
+              />
             </div>
           </div>
         );
@@ -54,11 +58,11 @@ function CounterPage(props) {
       {props.players.map((player, index) => {
         return (
           <div
-            className="setup glass"
+            className="player glass"
             key={index}
             style={{
               gridColumnStart: `${index <= 1 ? index + 1 : 1}`,
-              gridColumnEnd: `${index <= 1 ? index + 2 : 3}`,
+              gridColumnEnd: `${index <= 1 ? index + 1 : 3}`,
               gridRowStart: `${index}`,
               transform: `rotate(${
                 index === 0 ? '90' : index === 1 ? '-90' : ''
@@ -67,19 +71,17 @@ function CounterPage(props) {
           >
             <h1 className="name">{player.name}</h1>
             <div className="actions">
-              <button
-                className="btn"
+              <img
+                src={MinusIcon}
                 onClick={() => props.onDecrementPlayerLore(index)}
-              >
-                -
-              </button>
-              <div className="lore">{player.count}</div>
-              <button
                 className="btn"
+              />
+              <div className="lore">{player.count}</div>
+              <img
+                src={PlusIcon}
                 onClick={() => props.onIncrementPlayerLore(index)}
-              >
-                +
-              </button>
+                className="btn"
+              />
             </div>
           </div>
         );
@@ -92,7 +94,7 @@ function CounterPage(props) {
       {props.players.map((player, index) => {
         return (
           <div
-            className="setup glass"
+            className="player glass"
             key={index}
             style={{
               gridColumnStart: `${index === 0 || index === 2 ? 1 : 2}`,
@@ -107,19 +109,17 @@ function CounterPage(props) {
           >
             <h1 className="name">{player.name}</h1>
             <div className="actions">
-              <button
+              <img
+                src={MinusIcon}
+                onClick={() => props.onDecrementPlayerLore(0)}
                 className="btn"
-                onClick={() => props.onDecrementPlayerLore(index)}
-              >
-                -
-              </button>
+              />
               <div className="lore">{player.count}</div>
-              <button
+              <img
+                src={PlusIcon}
+                onClick={() => props.onIncrementPlayerLore(0)}
                 className="btn"
-                onClick={() => props.onIncrementPlayerLore(index)}
-              >
-                +
-              </button>
+              />
             </div>
           </div>
         );
