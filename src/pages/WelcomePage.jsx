@@ -2,16 +2,17 @@ import PropTypes from 'prop-types';
 import logo from '../assets/logo.png';
 import PlusIcon from '../assets/icons/plus-sign.svg';
 import MinusIcon from '../assets/icons/minus-sign.svg';
+import useGameContext from '../hooks/use-game-context';
 
-// Deconstruction of props params. (props.onAddPlayer, props.onSubstractPlayer, props.player)
-function WelcomePage({
-  onAddPlayer,
-  onSubstractPlayer,
-  players,
-  readyToStart,
-  onChangePlayerName,
-  onChangeStartGame,
-}) {
+function WelcomePage() {
+  const {
+    players,
+    substractPlayer,
+    addPlayer,
+    handlePlayerNameChange,
+    handleChangeStartGame,
+    readyToStart,
+  } = useGameContext();
   return (
     <div className="container glass">
       <div className="title">
@@ -21,23 +22,23 @@ function WelcomePage({
       <section className="setup">
         <h2 className="playersText">PLAYERS</h2>
         <div className="actions">
-          <img src={MinusIcon} onClick={onSubstractPlayer} className="btn" />
+          <img src={MinusIcon} onClick={substractPlayer} className="btn" />
           <div className="players">{players.length}</div>
-          <img src={PlusIcon} onClick={onAddPlayer} className="btn" />
+          <img src={PlusIcon} onClick={addPlayer} className="btn" />
         </div>
         {players.map((player, index) => (
           <input
             type="text"
             key={index}
             className="player-name"
-            onChange={(event) => onChangePlayerName(event, index)}
+            onChange={(event) => handlePlayerNameChange(event, index)}
             placeholder={`Player ${index + 1}`}
           />
         ))}
 
         <button
           className="start"
-          onClick={onChangeStartGame}
+          onClick={handleChangeStartGame}
           disabled={!readyToStart}
         >
           Start
