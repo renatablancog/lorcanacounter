@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lovelo');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Yusei Magic', sans-serif;
+  font-family: 'Anonymous Pro', sans-serif;
   color: #fff;
 }
 
@@ -15,14 +15,30 @@ button {
 }
 
 .mainContainer {
-  background: url('./assets/bg7.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: fill;
+  background: url('./assets/backgrounds/bg7.png');
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.disclaimer {
+  min-width: 50%;
+  margin-top: 20px;
+  text-align: center;
+  word-break: keep-all;
+  padding: 0 20px;
+  font-size: 8px;
+}
+
+.footer {
+  font-family: 'Lovelo';
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.3cap;
+  text-align: center;
 }
 /* General Classes */
 
@@ -36,26 +52,53 @@ button {
 }
 
 /*Welcome Page*/
+.welcome {
+  background: url('./assets/backgrounds/bg7.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: fill;
+  width: 100%;
+  height: 100vh;
+}
+
 .container {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70%;
-  width: 50%;
+  min-height: 90%;
+  min-width: 50%;
   margin: 0 auto;
-  padding-bottom: 50px;
 }
 
 .logo {
-  height: 200px;
-  margin-top: 50px;
+  height: auto;
+  margin-top: 20px;
+  width: 80%;
 }
 
 .title {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
-  font-size: 36px;
+  font-size: 24px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.playersText {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.3cap;
+}
+
+.title h2 {
+  margin-top: -40px;
+  letter-spacing: 0.3cap;
+  font-family: 'Lovelo';
+  font-weight: 900;
+  font-size: 28px;
 }
 
 .setup {
@@ -64,10 +107,12 @@ button {
   flex-direction: column;
   align-items: center;
   align-self: center;
-  width: 50%;
+  width: 200px;
   gap: 24px;
   font-size: 24px;
   justify-content: center;
+  padding: 24px;
+  height: 100%;
 }
 
 .actions {
@@ -86,12 +131,25 @@ button {
 }
 
 .player-name {
-  color: black;
+  color: white;
   text-align: center;
-  border-radius: 16px;
+  border-radius: 40px;
   border: none;
   padding: 8px;
   font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgb(255, 87, 87);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 87, 87, 0.6) 0%,
+    rgba(140, 82, 255, 0.6) 35%
+  );
+  font-family: 'Anonymous Pro';
+}
+
+.player-name::placeholder {
+  color: white;
 }
 
 .btn {
@@ -99,8 +157,17 @@ button {
 }
 
 .start {
-  font-size: 56px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.3cap;
+  margin-top: auto;
 }
+
+.footer {
+  margin-top: auto;
+}
+
+/* Layout */
 
 .two-players {
   display: flex;
@@ -128,4 +195,85 @@ button {
   justify-items: center;
   height: 100vh;
   width: 100%;
+}
+
+/* Win Page */
+
+.winPage {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.character {
+  width: 700px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bubbleMaleficient {
+  position: relative;
+  width: 390px;
+  height: 170px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: #000000 solid 2px;
+  transform: translate(-200px, -200px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.bubbleMaleficient:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 20px 16px 0;
+  border-color: rgba(0, 0, 0, 0.8) transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -20px;
+  left: 336px;
+}
+
+.bubbleSimba {
+  position: relative;
+  width: 390px;
+  height: 170px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: #000000 solid 2px;
+  transform: translate(100px, -200px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.bubbleSimba:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 20px 16px 0;
+  border-color: rgba(0, 0, 0, 0.8) transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -20px;
+  left: 36px;
 }

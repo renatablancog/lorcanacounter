@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import WelcomePage from './pages/WelcomePage';
 import CounterPage from './pages/CounterPage';
+import WinPage from './pages/WinPage';
 
 function App() {
   /**
@@ -103,6 +104,13 @@ function App() {
           onDecrementPlayerLore={decrementPlayerLore}
         />
       )}
+      {/* <WinPage winner="Renata" /> */}
+      <footer className="disclaimer">
+        <p>
+          All Disney&apos;s Lorcana, Disney logos, characters and trademarks
+          belong to Disney and do not have any intention of commercial use
+        </p>
+      </footer>
     </div>
   );
 }
