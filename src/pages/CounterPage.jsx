@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import PlusIcon from '../assets/icons/plus-sign.svg';
 import MinusIcon from '../assets/icons/minus-sign.svg';
+import Border from '../assets/border.png';
 
 function CounterPage(props) {
   const layoutOnePlayer = (
@@ -24,6 +25,7 @@ function CounterPage(props) {
 
   const layoutTwoPlayers = (
     <div className="two-players">
+      <img src={Border} alt="" className="border" />
       {props.players.map((player, index) => {
         return (
           <div
@@ -55,6 +57,8 @@ function CounterPage(props) {
 
   const layoutThreePlayers = (
     <div className="three-players">
+      <img src={Border} alt="" className="border" />
+
       {props.players.map((player, index) => {
         return (
           <div
@@ -91,6 +95,7 @@ function CounterPage(props) {
 
   const layoutFourPlayers = (
     <div className="four-players">
+      <img src={Border} alt="" className="border" />
       {props.players.map((player, index) => {
         return (
           <div
