@@ -1,4 +1,5 @@
-import PlusIcon from '../../assets/icons/plus-sign.svg';
+import PlusIconActive from '../../assets/icons/plus-sign-active.svg';
+import MinusIconActive from '../../assets/icons/minus-sign-active.svg';
 import MinusIcon from '../../assets/icons/minus-sign.svg';
 import Border from '../../assets/border.png';
 import useGameContext from '../../hooks/use-game-context';
@@ -29,13 +30,13 @@ function FourPlayers() {
               <h1 className="name">{player.name}</h1>
               <div className="actions">
                 <img
-                  src={MinusIcon}
+                  src={player.count <= 0 ? MinusIcon : MinusIconActive}
                   onClick={() => decrementPlayerLore(index)}
                   className="btn"
                 />
                 <div className="lore">{player.count}</div>
                 <img
-                  src={PlusIcon}
+                  src={PlusIconActive}
                   onClick={() => incrementPlayerLore(index)}
                   className="btn"
                 />

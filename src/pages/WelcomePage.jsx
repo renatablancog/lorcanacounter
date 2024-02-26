@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import logo from '../assets/logo.png';
+import PlusIconActive from '../assets/icons/plus-sign-active.svg';
+import MinusIconActive from '../assets/icons/minus-sign-active.svg';
 import PlusIcon from '../assets/icons/plus-sign.svg';
 import MinusIcon from '../assets/icons/minus-sign.svg';
 import useGameContext from '../hooks/use-game-context';
@@ -22,9 +24,17 @@ function WelcomePage() {
       <section className="setup">
         <h2 className="playersText">PLAYERS</h2>
         <div className="actions">
-          <img src={MinusIcon} onClick={substractPlayer} className="btn" />
+          <img
+            src={players.length <= 1 ? MinusIcon : MinusIconActive}
+            onClick={substractPlayer}
+            className="btn"
+          />
           <div className="players">{players.length}</div>
-          <img src={PlusIcon} onClick={addPlayer} className="btn" />
+          <img
+            src={players.length < 4 ? PlusIconActive : PlusIcon}
+            onClick={addPlayer}
+            className="btn"
+          />
         </div>
         {players.map((player, index) => (
           <input
