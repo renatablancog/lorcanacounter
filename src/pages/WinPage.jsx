@@ -4,6 +4,8 @@ import Simba from '../components/characters/Simba';
 import Maleficient from '../components/characters/Maleficient';
 import confetti from 'canvas-confetti';
 import ArrowButtons from '../components/layout/ArrowButtons/ArrowButtons';
+import mesh from '../assets/backgrounds/mesh-gradient.png';
+import mesh2 from '../assets/backgrounds/mesh-gradient2.png';
 
 function WinPage({ winner }) {
   const [character, setCharacter] = useState(null);
@@ -45,11 +47,7 @@ function WinPage({ winner }) {
     <div
       className="winPage"
       style={{
-        background: `url(${
-          character > 0
-            ? 'lorcanacounter/src/assets/backgrounds/mesh-gradient.png'
-            : 'lorcanacounter/src/assets/backgrounds/mesh-gradient2.png'
-        })`,
+        background: `url(${character > 0 ? mesh : mesh2})`,
       }}
     >
       <ArrowButtons />

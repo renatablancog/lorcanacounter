@@ -5,8 +5,10 @@ import text from '../../assets/bubble2.png';
 function Simba({ winner }) {
   return (
     <>
-      <img className="bubbleSimba" src={text} />
-      <p className="winnerNameSimba">Well played {winner} !</p>
+      <div className="bubbleSimba">
+        <img src={text} alt="simba text dialog" />
+        <p className="winnerNameSimba">Well played {winner} !</p>
+      </div>
       <img src={simba} alt="simba" style={{ left: 0 }} className="character" />
     </>
   );
