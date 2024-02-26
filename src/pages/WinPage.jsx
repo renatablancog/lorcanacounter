@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Simba from '../components/characters/Simba';
 import Maleficient from '../components/characters/Maleficient';
 import confetti from 'canvas-confetti';
+import ArrowButtons from '../components/layout/ArrowButtons/ArrowButtons';
 
 function WinPage({ winner }) {
   const [character, setCharacter] = useState(null);
 
-  var duration = 15 * 1000;
+  var duration = 5 * 1000;
   var animationEnd = Date.now() + duration;
   var defaults = { startVelocity: 15, spread: 500, ticks: 60, zIndex: 0 };
 
@@ -51,11 +52,14 @@ function WinPage({ winner }) {
         })`,
       }}
     >
-      {character > 0 ? (
-        <Simba winner={winner} />
-      ) : (
-        <Maleficient winner={winner} />
-      )}
+      <ArrowButtons />
+      <div className="characterContainer">
+        {character > 0 ? (
+          <Simba winner={winner} />
+        ) : (
+          <Maleficient winner={winner} />
+        )}
+      </div>
     </div>
   );
 }

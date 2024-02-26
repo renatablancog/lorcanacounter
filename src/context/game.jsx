@@ -95,6 +95,21 @@ function Provider({ children }) {
     setPlayers(updatedPlayers);
   };
 
+  const restartGame = () => {
+    setWinner('');
+    const restartedPlayers = players.map((player) => {
+      return { ...player, count: 0 };
+    });
+    setPlayers(restartedPlayers);
+  };
+
+  const exitGame = () => {
+    setWinner('');
+    setPlayers([{ name: '', count: 0 }]);
+    setGameStart(false);
+    setReadyToStart(false);
+  };
+
   const value = {
     readyToStart,
     players,
@@ -106,6 +121,8 @@ function Provider({ children }) {
     handleChangeStartGame,
     incrementPlayerLore,
     decrementPlayerLore,
+    restartGame,
+    exitGame,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
